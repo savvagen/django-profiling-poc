@@ -15,7 +15,7 @@
                 {% for a in author_articles %}
                 <tr class="striped--light-gray">
                    <td class="pv2 ph3">{{ a.id }}</td>
-                   <td class="pv2 ph3">{{ a.title }}</td>
+                   <td class="pv2 ph3"><a href="/articles/{{ a.id }}">{{ a.title }}</a></td>
                    <td class="pv2 ph3">{{ a.body }}</td>
                 </tr>
                 {% endfor %}
