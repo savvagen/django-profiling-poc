@@ -9,6 +9,8 @@
                     <p class="mb2">Full Name: {{ a.first_name }} {{ a.last_name }}</p>
                     <p class="mb2">Username: {{ a.name }} </p>
                     <p class="mb2">Email: {{ a.email }}</p>
+                    <p>
+                    <div><a href="/authors/{{ a.id }}">View Author Articles</a></div>
                 </div>
             </div>
         {% endfor %}
