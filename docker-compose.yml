@@ -1,19 +1,19 @@
 version: '3.7'
 
 services:
-#  loadbalancer:
-#    image: loadbalancer:latest
-#    build:
-#      context: .
-#      dockerfile: ./compose/loadbalancer/Dockerfile
-#    healthcheck:
-#      test: wget http://localhost:8000/nginx_status -O -
-#    ports:
-#      - "8000:8000"
-#      - "8443:8443"
-#    depends_on:
-#      - django
-#    restart: "on-failure"
+  loadbalancer:
+    image: loadbalancer:latest
+    build:
+      context: .
+      dockerfile: ./compose/loadbalancer/Dockerfile
+    healthcheck:
+      test: wget http://localhost:8000/nginx_status -O -
+    ports:
+      - "8000:8000"
+      - "8443:8443"
+    depends_on:
+      - django
+    restart: "on-failure"
 
   django:
     image: djangoprofilingapp:latest
