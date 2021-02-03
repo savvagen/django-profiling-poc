@@ -1,0 +1,25 @@
+django>=2.2,<2.3
+django-filter
+django-constance[database]
+djangorestframework==3.11.2
+django-silk==4.1.0 # https://github.com/jazzband/django-silk
+django-debug-toolbar==3.2 # https://github.com/jazzband/django-debug-toolbar
+django-debug-panel # https://pypi.org/project/django-debug-panel/
+SnakeViz # https://jiffyclub.github.io/snakeviz/
+drf-yasg2
+psycopg2
+sentry-sdk
+django-environ==0.4.4  # https://github.com/joke2k/django-environ
+python-memcached
+gunicorn==19.9.0  # https://github.com/benoitc/gunicorn
+django-health-check
+
+# Django & Testing
+# ------------------------------------------------------------------------------
+pytest==3.4.2  # https://github.com/pytest-dev/pytest
+pytest-sugar==0.9.1  # https://github.com/Frozenball/pytest-sugar
+mock==2.0.0  # https://github.com/testing-cabal/mock
+freezegun==0.3.10  # https://github.com/spulec/freezegun
+factory-boy==2.10.0  # https://github.com/FactoryBoy/factory_boy
+django-test-plus==1.0.22  # https://github.com/revsys/django-test-plus
+pytest-django==3.1.2  # https://github.com/pytest-dev/pytest-django

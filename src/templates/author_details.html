@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block page_content %}
+        <div class="mw6 center pa3 sans-serif">
+            <h1 class="mb4">Author: {{ author.first_name }} {{ author.last_name }}</h1>
+            <header class="b mb2">Email: {{ author.email }}</header>
+            <h2 class="mb4">Articles: {{ author_articles|length }} </h2>
+            <p/>
+            <table style="width:100%" class="collapse ba br2 b--black-10 pv2 ph3">
+                <caption>Articles of the current author</caption>
+                <tr class="striped--light-gray">
+                    <th class="pv2 ph3 tl f6 fw6 ttu">id</th>
+                    <th class="pv2 ph3 tl f6 fw6 ttu">title</th>
+                    <th class="pv2 ph3 tl f6 fw6 ttu">body</th>
+                </tr>
+                {% for a in author_articles %}
+                <tr class="striped--light-gray">
+                   <td class="pv2 ph3">{{ a.id }}</td>
+                   <td class="pv2 ph3">{{ a.title }}</td>
+                   <td class="pv2 ph3">{{ a.body }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+{% endblock %}

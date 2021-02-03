@@ -1,0 +1,51 @@
+version: '3.7'
+
+services:
+#  loadbalancer:
+#    image: loadbalancer:latest
+#    build:
+#      context: .
+#      dockerfile: ./compose/loadbalancer/Dockerfile
+#    healthcheck:
+#      test: wget http://localhost:8000/nginx_status -O -
+#    ports:
+#      - "8000:8000"
+#      - "8443:8443"
+#    depends_on:
+#      - django
+#    restart: "on-failure"
+
+  django:
+    image: djangoprofilingapp:latest
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile
+    env_file:
+      - .envs/.django/.env
+      - .envs/.postgres/.env
+    volumes:
+      - .:/app
+    depends_on:
+      - postgres
+    ports:
+      - "5000:5000"
+    command: /gunicorn.sh
+    healthcheck:
+      test: python -c "import requests; exit(requests.get('http://127.0.0.1:5000/health_check/').status_code != 200)"
+      start_period: 1h
+    restart: "on-failure"
+
+  postgres:
+    image: postgres:10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    env_file:
+      - .envs/.postgres/.env
+    healthcheck:
+      test: "pg_isready --username=$${POSTGRES_USER} --dbname=$${POSTGRES_DB}"
+
+volumes:
+  # This is necessary for not removing volumes after a hard-restart.
+  postgres_data: {}
