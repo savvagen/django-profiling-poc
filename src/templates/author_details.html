@@ -6,6 +6,7 @@
             <h2 class="mb4">Articles: {{ author_articles|length }} </h2>
             <p/>
             <!-- Make table resizable https://www.brainbell.com/javascript/making-resizable-table-js.html -->
+            {% if author_articles|length > 0 %}
             <table style="margin: 0% -50% 0%; width:200%; display: overflow: scroll;" class="collapse ba br2 b--black-10 pv2 ph3">
                 <caption>Articles of the current author</caption>
                 <tbody>
@@ -23,5 +24,8 @@
                     {% endfor %}
                 </tbody>
             </table>
+            {% else %}
+            <div><h2>No Articles Found</h2></div>
+            {% endif %}
         </div>
 {% endblock %}
