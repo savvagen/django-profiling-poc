@@ -23,7 +23,7 @@ API Spec: http://localhost:8000/swagger/
 
 ![swagger](http://dl3.joxi.net/drive/2021/02/04/0025/3664/1670736/36/ca5d99e269.jpg)
 
-### Adding Articles with Html:
+### Posting Articles with Html:
 Send request `POST http://localhost:8000/api/articles/` with body:
 ```
 {
