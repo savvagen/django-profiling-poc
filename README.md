@@ -42,7 +42,7 @@ Then open article page: `http://localhost:8000/articles/{article_id}`
 
 ## DjangoSilk:
 
-[DjangoSilk on Github]("https://github.com/jazzband/django-silk")
+[DjangoSilk on Github](https://github.com/jazzband/django-silk)
 
 Go to resource: http://localhost:8000/silk/ to open django silk profiler dashboard:
 ![silk](http://dl4.joxi.net/drive/2021/02/04/0025/3664/1670736/36/75fdb80f6d.jpg)
