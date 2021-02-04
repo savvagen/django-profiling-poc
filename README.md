@@ -74,7 +74,7 @@ to be able to view your own performance statistics on Sentry website.
 
 # 3. Switch (NO/OFF) profiling:
 
-1. To Switch on `DjangoSilk` profiling set in django settings: DEBUG=True (False to switch OFF)
+1. To Switch on `DjangoSilk` profiling set in django settings: `DEBUG=True` (False to switch OFF)
 2. To Switch on `SentryPerformance` profiling:
  * Login to admin panel `http://localhost:8000/admin` as admin user: `admin / adminadmin`
  * go to `Constance` configurations
