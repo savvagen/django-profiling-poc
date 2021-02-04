@@ -23,8 +23,9 @@ services:
     env_file:
       - .envs/.django/.env
       - .envs/.postgres/.env
-    volumes:
-      - .:/app
+    # execute django from mounted source
+    #volumes:
+    #  - .:/app
     depends_on:
       - postgres
     ports:
