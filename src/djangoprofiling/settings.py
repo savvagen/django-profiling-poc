@@ -10,7 +10,8 @@ import environ
 
 env = environ.Env()
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))  # 'djangoprofiling/'
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 'src/'
 
 
 # Quick-start development settings - unsuitable for production
@@ -36,6 +37,7 @@ INSTALLED_APPS = [
     'constance',
     'constance.backends.database',
     'health_check',
+    'markdownify',
     # own apps
     'pages',
     'author',
@@ -80,7 +82,6 @@ TEMPLATES = [
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 # ------------------------------------------------------------------
 STATIC_URL = '/static/'
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 

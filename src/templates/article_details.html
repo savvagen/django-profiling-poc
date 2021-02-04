@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 {% block page_content %}
+{% load markdownify %} <!--Load Markdown filter Extension-->
         <div class="mw6 center pa3 sans-serif">
-            <h1 class="mb4">Article: {{ article.title | linebreaks}}</h1>
+            <h1 class="mb4">Title: {{ article.title | linebreaks}}</h1>
             <header class="b mb2">Subject: {{ article.subject }}</header>
-            <header class="mb2">Body:</header>
-            <textarea class="mb2">{{ article.body }}</textarea>
+            <header class="mb2">Body Text:</header>
+            <textarea class="mb2" style="margin: 0px 0px 8px; width: 625px; height: 78px;">{{ article.body }}</textarea>
+            <p>Html View:</p>
+            <div>
+                {% autoescape off %}
+                    {{ article.body }}
+                {% endautoescape %}
+            </div>
+            <p>Markdown:</p>
+            <div>{{'Some *test* [link](#)'|markdownify }}</div>
             <h1 class="mb4">Author:</h1>
             <p>
             <div class="pa2 mb3 striped--near-white">
                 <div class="pl2">
                     <p class="mb2">Full Name: {{ author.first_name }} {{ author.last_name }}</p>
-                    <p class="mb2">Username: <a href="/authors/{{ author.id }}">{{ author.name }}</a> </p>
+                    <p class="mb2">Username: <a class="link db fw6 blue dim" href="/authors/{{ author.id }}">{{ author.name }}</a> </p>
                     <p class="mb2">Email: {{ author.email }}</p>
                 </div>
             </div>

@@ -5,7 +5,7 @@ set -o pipefail
 set -o nounset
 
 cd src
-python manage.py collectstatic --no-input --clear
+python manage.py collectstatic --no-input
 python manage.py migrate
 
 if [[ -n "$DJANGO_ADMIN_USERNAME" ]]; then

@@ -5,20 +5,23 @@
             <header class="b mb2">Email: {{ author.email }}</header>
             <h2 class="mb4">Articles: {{ author_articles|length }} </h2>
             <p/>
-            <table style="width:100%" class="collapse ba br2 b--black-10 pv2 ph3">
+            <!-- Make table resizable https://www.brainbell.com/javascript/making-resizable-table-js.html -->
+            <table style="margin: 0px -80% 8px; width:250%; display: block; overflow: scroll;" class="collapse ba br2 b--black-10 pv2 ph3">
                 <caption>Articles of the current author</caption>
-                <tr class="striped--light-gray">
-                    <th class="pv2 ph3 tl f6 fw6 ttu">id</th>
-                    <th class="pv2 ph3 tl f6 fw6 ttu">title</th>
-                    <th class="pv2 ph3 tl f6 fw6 ttu">body</th>
-                </tr>
-                {% for a in author_articles %}
-                <tr class="striped--light-gray">
-                   <td class="pv2 ph3">{{ a.id }}</td>
-                   <td class="pv2 ph3"><a href="/articles/{{ a.id }}">{{ a.title }}</a></td>
-                   <td class="pv2 ph3">{{ a.body }}</td>
-                </tr>
-                {% endfor %}
+                <tbody>
+                    <tr class="striped--light-gray">
+                        <th class="pv2 ph3 tl f6 fw6 ttu">id</th>
+                        <th class="pv2 ph3 tl f6 fw6 ttu">title</th>
+                        <th class="pv2 ph3 tl f6 fw6 ttu">body</th>
+                    </tr>
+                    {% for a in author_articles %}
+                    <tr class="striped--near-white">
+                       <td class="pv2 ph3">{{ a.id }}</td>
+                       <td class="pv2 ph3"><a class="link db fw6 blue dim" href="/articles/{{ a.id }}">{{ a.title }}</a></td>
+                       <td class="pv2 ph3">{{ a.body }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
             </table>
         </div>
 {% endblock %}

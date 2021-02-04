@@ -13,6 +13,7 @@ django-environ==0.4.4  # https://github.com/joke2k/django-environ
 python-memcached
 gunicorn==19.9.0  # https://github.com/benoitc/gunicorn
 django-health-check
+django-markdownify # https://django-markdownify.readthedocs.io/en/latest/install_and_usage.html
 
 # Django & Testing
 # ------------------------------------------------------------------------------

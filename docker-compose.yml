@@ -16,10 +16,10 @@ services:
     restart: "on-failure"
 
   django:
-    image: djangoprofilingapp:latest
+    image: django_profiling_app:latest
     build:
       context: .
-      dockerfile: ./compose/django/Dockerfile
+      dockerfile: compose/django/Dockerfile
     env_file:
       - .envs/.django/.env
       - .envs/.postgres/.env
