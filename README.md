@@ -19,4 +19,4 @@ Home: http://localhost:8000/
 
 Swagger: http://localhost:8000/swagger/
 
-![swagger](http://dl4.joxi.net/drive/2021/02/03/0025/3664/1670736/36/d3763ea3b7.jpg)
+![swagger](http://dl3.joxi.net/drive/2021/02/04/0025/3664/1670736/36/ca5d99e269.jpg)
