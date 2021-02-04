@@ -41,6 +41,7 @@ Then open article page: `http://localhost:8000/articles/{article_id}`
 # 2. Profiling Features:
 
 ## DjangoSilk:
+
 [DjangoSilk on Github]("https://github.com/jazzband/django-silk")
 
 Go to resource: http://localhost:8000/silk/ to open django silk profiler dashboard:
