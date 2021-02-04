@@ -265,7 +265,7 @@ sentry_logging = LoggingIntegration(
 )
 
 sentry_sdk.init(
-    dsn=env.str("SENTRY_DNS"),
+    dsn=env.str("SENTRY_DNS", default="https://1d390e4b6ab34327800d124f2905b5c1@o497714.ingest.sentry.io/5574162"),
     integrations=[sentry_logging, DjangoIntegration()],
     debug=False,
     # traces_sample_rate=1.0,
