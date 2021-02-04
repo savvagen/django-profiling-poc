@@ -255,9 +255,6 @@ CONSTANCE_CONFIG = {
 
 # Sentry
 # ------------------------------------------------------------------
-SENTRY_DNS = env.str("SENTRY_DNS", default="https://1d390e4b6ab34327800d124f2905b5c1@o497714.ingest.sentry.io/5574162")
-
-
 def traces_sampler(sampling_context):
     return 1.0 if config.SENTRY_TRACING_ENABLED else 0
 
@@ -268,11 +265,12 @@ sentry_logging = LoggingIntegration(
 )
 
 sentry_sdk.init(
-    dsn=f"{SENTRY_DNS}",
+    dsn=env.str("SENTRY_DNS"),
     integrations=[sentry_logging, DjangoIntegration()],
     debug=False,
     # traces_sample_rate=1.0,
     traces_sampler=traces_sampler,
-    send_default_pii=False
+    send_default_pii=False,
+    environment="test"
 )
 
