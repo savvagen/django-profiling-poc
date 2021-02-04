@@ -53,6 +53,12 @@ Watch request details:
 
 [Documentation](https://docs.sentry.io/platforms/python/guides/django/performance/) for switching Sentry Performance monitoring for Django
 
+```
+Notes!!!
+Create your own organization for sentry and copy SENTRY_DNS link to .envs/.django/.env file
+to be able to view your own performance statistics on Sentry website.
+```
+
 ####Open Performance Statistics:
 
 ![sentryperf](http://dl3.joxi.net/drive/2021/02/04/0025/3664/1670736/36/eac79d934b.jpg)
