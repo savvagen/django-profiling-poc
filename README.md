@@ -66,7 +66,7 @@ Watch request details:
 
 ![sentrytiming](http://dl3.joxi.net/drive/2021/02/04/0025/3664/1670736/36/30297edaa7.jpg)
 
-# 3. Switch (NO/OFF) profiling:
+# 3. Switch (ON/OFF) profiling:
 
 1. To Switch on `DjangoSilk` profiling set in django settings: `DEBUG=True` (False to switch OFF)
 2. To Switch on `SentryPerformance` profiling:
