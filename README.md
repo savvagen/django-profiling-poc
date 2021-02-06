@@ -50,21 +50,15 @@ Go to resource: http://localhost:8000/silk/ to open django silk profiler dashboa
 Watch request details:
 ![request](http://dl3.joxi.net/drive/2021/02/04/0025/3664/1670736/36/e2fae1c147.jpg)
 
-## Sentry Performance Tracing:
+## Performance Monitoring with Sentry:
 
 [Documentation](https://docs.sentry.io/platforms/python/guides/django/performance/) for switching Sentry Performance monitoring for Django
 
-```
-Notes!!!
-Create your own organization for sentry and copy SENTRY_DNS link to .envs/.django/.env file
-to be able to view your own performance statistics on Sentry website.
-```
-
-#### Open Performance Statistics:
+#### Performance Statistics:
 
 ![sentryperf](http://dl3.joxi.net/drive/2021/02/04/0025/3664/1670736/36/eac79d934b.jpg)
 
-#### Open Request Statistics:
+#### Request Statistics:
 
 ![sentryreq](http://dl4.joxi.net/drive/2021/02/04/0025/3664/1670736/36/da2d69a9dc.jpg)
 
