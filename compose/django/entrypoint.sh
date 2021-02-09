@@ -10,7 +10,7 @@ fi
 
 export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:5432/${POSTGRES_DB}"
 
-postgres_ready(){
+postgres_is_ready(){
   python << END
 import sys
 
@@ -30,12 +30,12 @@ sys.exit(0)
 END
 }
 
-echo "Waiting establish connect to PostgreSQL = postgres://${POSTGRES_USER}:*******@${POSTGRES_HOST}:5432/${POSTGRES_DB}"
-until postgres_ready; do
-  echo "PostgreSQL is unavailable (sleeping)..."
+echo "Connecting to Postgres = postgres://${POSTGRES_USER}:*******@${POSTGRES_HOST}:5432/${POSTGRES_DB}"
+until postgres_is_ready; do
+  echo "Postgres is unavailable (sleeping)..."
   sleep 1
 done
-echo "PostgreSQL is up - continuing..."
+echo "Postgres is up - continuing..."
 
 
 exec "$@"
