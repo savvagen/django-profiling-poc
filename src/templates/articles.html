@@ -3,8 +3,9 @@
         <div class="mw6 center pa3 sans-serif">
             <h1 class="mb4">Articles Size: {{ articles|length }}</h1>
             <header class="b mb2">{{ description | linebreaks }}</header>
-        {% for art in articles %}
-            <div class="pa2 mb3 striped--near-white" style="margin: 0px -50px 10px; width: 700px;">
+        {% if articles|length > 0 %}
+            {% for art in articles %}
+                <div class="pa2 mb3 striped--near-white" style="margin: 0px -50px 10px; width: 700px;">
                 <div class="pl2">
                     <p class="mb2">Title: {{ art.title }}</p>
                     <p class="mb2">Subject: {{ art.subject }} </p>
@@ -19,6 +20,9 @@
                     <div><a class="link db fw6 blue dim" href="/articles/{{ art.id }}">View Info</a></div>
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
+        {% else %}
+            <div><h2>No Articles Found</h2></div>
+        {% endif %}
         </div>
 {% endblock %}

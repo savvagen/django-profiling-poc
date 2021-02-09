@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div align="center" class="f6 fw6 pb2-ns mr2 mr3-m mr4-l">
+    <h1>Create Article</h1>
+    <p>
+    <form method="post"> {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+</div>
+{% endblock %}
