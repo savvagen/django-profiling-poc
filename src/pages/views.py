@@ -76,6 +76,15 @@ class PagesView(APIView):
         }
         return render(request, 'article_create.html', context)
 
+
+    def article_delete_view(request, id=None, *args, **kwargs):
+        article = get_object_or_404(Article.objects.all(), id=id)
+        if request.method == "POST":
+            article.delete()
+            return redirect('articles_page')
+        context = {"article": article}
+        return render(request, 'article_delete.html', context)
+
     def article_search_view(request, *args, **kwargs):
         return render(request, 'article_search.html', {})
 

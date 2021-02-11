@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div align="center" class="f6 fw6 pb2-ns mr2 mr3-m mr4-l">
+    <p>
+    <form action="." method="post"> {% csrf_token %}
+        <h1>Do you want to delete this article "{{ article.title }}"?</h1>
+        <p></p>
+        <div style="display: inline-block">
+            <input type="submit" value="Yes">
+            <a href="../">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

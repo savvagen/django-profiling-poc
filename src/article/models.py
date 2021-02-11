@@ -1,5 +1,6 @@
 from django.db import models
 from author.models import Author
+from django.urls import reverse
 
 
 class Article(models.Model):
@@ -11,3 +12,6 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("articles_detail_page", kwargs={"id": self.id})  # f"/articles/{self.id}/"
