@@ -1,5 +1,6 @@
 .idea
 .vscode
+venv
 src/djangoprofiling/static/*
 __pycache__/
 src/__pycache__/

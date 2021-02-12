@@ -39,7 +39,7 @@ class PagesView(APIView):
     def articles_list_view(request, *args, **kwargs):
         title = request.GET.get("title")
         if title is not None:
-            articles = Article.objects.filter(title=f"{title}")
+            articles = Article.objects.filter(title__icontains=f"{title}") # Article.objects.filter(title=f"{title}")
             serializer = ArticleSerializer(articles, many=True)
             paginator = Paginator(serializer.data, 10)
             page_number = request.GET.get('page')
