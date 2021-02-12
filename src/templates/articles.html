@@ -4,6 +4,7 @@
             <h1 class="mb4">Articles Size: {{ articles|length }}</h1>
             <header class="b mb2">{{ description | linebreaks }}</header>
         {% if articles|length > 0 %}
+            <!-- Article List -->
             {% for art in articles %}
             <div class="pa2 mb3 striped--near-white" style="margin: 0px -50px 10px; width: 700px;">
                 <div class="pl2">
@@ -21,6 +22,38 @@
                 </div>
             </div>
             {% endfor %}
+
+            <!-- Pagination -->
+            {% if pagination %}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if articles.has_previous %}
+                        {% if title %}
+                        <a href="?page=1&title={{ title }}">&laquo; first</a>
+                        <a href="?page={{ articles.previous_page_number }}&title={{ title }}">previous</a>
+                        {% else %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ articles.previous_page_number }}">previous</a>
+                        {% endif %}
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
+                    </span>
+
+                    {% if articles.has_next %}
+                        {% if title %}
+                        <a href="?page={{ articles.next_page_number }}&title={{ title }}">next</a>
+                        <a href="?page={{ articles.paginator.num_pages }}&title={{ title }}">last &raquo;</a>
+                        {% else %}
+                        <a href="?page={{ articles.next_page_number }}">next</a>
+                        <a href="?page={{ articles.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    {% endif %}
+                </span>
+            </div>
+            {% endif %}
+
         {% else %}
             <div><h2>No Articles Found</h2></div>
         {% endif %}

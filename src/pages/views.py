@@ -8,6 +8,8 @@ from article.serializers import ArticleSerializer
 from rest_framework.views import APIView
 from article.forms import ArticleForm, RawArticleForm
 import random
+from django.core.paginator import Paginator
+
 
 class PagesView(APIView):
 
@@ -35,15 +37,31 @@ class PagesView(APIView):
         return render(request, 'author_details.html', context)
 
     def articles_list_view(request, *args, **kwargs):
-        title = request.POST.get("title")
+        title = request.GET.get("title")
         if title is not None:
             articles = Article.objects.filter(title=f"{title}")
-            context = {"articles": articles, "description": "list of articles on this website"}
+            serializer = ArticleSerializer(articles, many=True)
+            paginator = Paginator(serializer.data, 10)
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+            context = {
+                "title": title,
+                "pagination": True,
+                "articles": page_obj,
+                "description": "list of articles on this website"
+            }
             return render(request, 'articles.html', context)
         else:
             articles = Article.objects.all()
             serializer = ArticleSerializer(articles, many=True)
-            context = {"articles": serializer.data, "description": "list of articles on this website"}
+            paginator = Paginator(serializer.data, 10)
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+            context = {
+                "pagination": True,
+                'articles': page_obj,  # "articles": serializer.data,
+                "description": "list of articles on this website",
+            }
             return render(request, 'articles.html', context)
 
     def article_details_view(request, id=None, *args, **kwargs):
