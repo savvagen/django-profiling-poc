@@ -21,9 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 'src/'
 SECRET_KEY = 'c+9t0ulzqbdm7u1))v_7%sas0*d%)_+a4lrg&)d7t)fl0)=+-hi_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'loadbalancer']
 
 # Application definition
 INSTALLED_APPS = [
@@ -204,7 +204,7 @@ def my_custom_logic(request):
 # SILKY_INTERCEPT_FUNC = my_custom_logic  # default: False
 SILKY_INTERCEPT_FUNC = lambda r: settings.DEBUG  # Do not profile requests when DEBUG = False
 # Do not garbage collect for tests
-SILKY_MAX_RECORDED_REQUESTS_CHECK_PERCENT = 0
+SILKY_MAX_RECORDED_REQUESTS_CHECK_PERCENT = 10
 SILKY_MAX_RECORDED_REQUESTS = 10 ** 3  # To make sure silky garbage collects old request/response data, a config var can be set to limit the number of request/response rows it stores.
 
 
