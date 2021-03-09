@@ -21,9 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 'src/'
 SECRET_KEY = 'c+9t0ulzqbdm7u1))v_7%sas0*d%)_+a4lrg&)d7t)fl0)=+-hi_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'django_profiling_app']
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['127.0.0.1', 'localhost', '0.0.0.0', 'loadbalancer'])
 
 # Application definition
 INSTALLED_APPS = [

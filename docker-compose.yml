@@ -3,8 +3,6 @@ version: '3.7'
 services:
   loadbalancer:
     image: loadbalancer:latest
-    container_name: loadbalancer
-    hostname: django_profiling_app
     build:
       context: .
       dockerfile: ./compose/loadbalancer/Dockerfile
@@ -18,7 +16,6 @@ services:
 
   django:
     image: django_profiling_app:latest
-    container_name: django
     build:
       context: .
       dockerfile: compose/django/Dockerfile
@@ -40,7 +37,6 @@ services:
 
   postgres:
     image: postgres:10
-    container_name: postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:

@@ -22,6 +22,7 @@ schema_view = get_schema_view(
       permission_classes=(permissions.AllowAny,),
    )
 
+
 def trigger_error(request):
     division_by_zero = 1 / 0
 
