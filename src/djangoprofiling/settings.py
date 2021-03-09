@@ -194,17 +194,9 @@ SILKY_PYTHON_PROFILER_RESULT_PATH = './djangoprofiling/profiles'
 #     {'module': 'author.views', 'function': 'AuthorViewSet.delete'},
 # ]
 
-
-def my_custom_logic(request):
-    # return 'record_requests' in request.session
-    return config.DJANGO_SILK_PROFILER_ENABLED
-
-
-# SILKY_INTERCEPT_PERCENT = 50  # log only 50% of requests (Use in Load Testing)
-# SILKY_INTERCEPT_FUNC = my_custom_logic  # default: False
-SILKY_INTERCEPT_FUNC = lambda r: settings.DEBUG  # Do not profile requests when DEBUG = False
-# Do not garbage collect for tests
-SILKY_MAX_RECORDED_REQUESTS_CHECK_PERCENT = 10
+SILKY_INTERCEPT_PERCENT = 0  # log only 50% of requests (Use in Load Testing)
+# SILKY_INTERCEPT_FUNC = lambda r: settings.DEBUG  # Do not profile requests when DEBUG = False
+SILKY_MAX_RECORDED_REQUESTS_CHECK_PERCENT = 0  # Do not garbage collect for tests
 SILKY_MAX_RECORDED_REQUESTS = 10 ** 3  # To make sure silky garbage collects old request/response data, a config var can be set to limit the number of request/response rows it stores.
 
 
