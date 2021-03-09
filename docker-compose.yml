@@ -4,6 +4,7 @@ services:
   loadbalancer:
     image: loadbalancer:latest
     container_name: loadbalancer
+    hostname: django_profiling_app
     build:
       context: .
       dockerfile: ./compose/loadbalancer/Dockerfile

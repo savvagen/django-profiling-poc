@@ -23,7 +23,7 @@ SECRET_KEY = 'c+9t0ulzqbdm7u1))v_7%sas0*d%)_+a4lrg&)d7t)fl0)=+-hi_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'loadbalancer']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'django_profiling_app']
 
 # Application definition
 INSTALLED_APPS = [
