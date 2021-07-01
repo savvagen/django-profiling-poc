@@ -7,7 +7,9 @@ django-debug-toolbar==3.2 # https://github.com/jazzband/django-debug-toolbar
 django-debug-panel # https://pypi.org/project/django-debug-panel/
 SnakeViz # https://jiffyclub.github.io/snakeviz/
 drf-yasg2
-psycopg2
+# psycopg2
+psycopg2<2.9
+psycopg2-binary<2.9
 sentry-sdk
 django-environ==0.4.4  # https://github.com/joke2k/django-environ
 python-memcached
